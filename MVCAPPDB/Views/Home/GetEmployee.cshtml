@@ -1,0 +1,58 @@
+﻿@model MyApp.Models.EmployeeModel
+
+@{
+    ViewBag.Title = "GetEmployee";
+}
+
+<h4>Get Employee</h4>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+  <a href="@Url.Action("GetAllEmployee","Home")" class="btn btn-primary">Back To List</a>
+</p>

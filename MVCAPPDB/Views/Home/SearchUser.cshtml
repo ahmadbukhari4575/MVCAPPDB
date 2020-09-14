@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MyApp.Models.EmployeeModel>
+
+@{
+    ViewBag.Title = "GetAllEmployee";
+}
+
+<div class="container" style="padding:20pt;">
+    <div class="row">
+        <h4>Search Employee</h4>
+
+
+        <a href="@Url.Action("Create","Home")" class="btn btn-success" style="margin-bottom:20pt;margin-top:20pt">Create Employee</a>
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Position)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Salary)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address.State)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address.District)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address.PostalCode)
+                </th>
+                <th>Action</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Position)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Salary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address.State)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address.District)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address.PostalCode)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditEmployee", new { id = item.ID }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Details", "GetEmployee", new { id = item.ID }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Delete", "DeleteEmployee", new { id = item.ID }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
